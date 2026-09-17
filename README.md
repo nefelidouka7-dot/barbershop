@@ -13,7 +13,7 @@ Full-stack barber shop booking with **Next.js 14 (App Router)**, **TypeScript**,
 - Admin: week calendar agenda, barbers, hours/time-off, services, customers, stats
 - Staff-only middleware (shop_owner / barber roles)
 - Realtime toast on new appointments
-- Confirmation email (Resend) + hourly reminder cron
+- Confirmation email (Resend)
 
 ## Setup
 
@@ -58,20 +58,15 @@ npm run dev
 - Admin: `/admin/login` → `/admin`
 - Auth callback: `/auth/callback`
 
-### 5. Reminders cron (optional)
-
-`vercel.json` hits `/api/cron/reminders` hourly. Set `CRON_SECRET`.
-
 ## Env vars
 
 | Variable | Required | Purpose |
 |---|---|---|
 | `NEXT_PUBLIC_SUPABASE_URL` | yes | Supabase project |
 | `NEXT_PUBLIC_SUPABASE_ANON_KEY` | yes | Browser + SSR client |
-| `SUPABASE_SERVICE_ROLE_KEY` | yes (prod) | Bookings, availability, cron |
-| `RESEND_API_KEY` | no | Confirmation / reminder emails |
+| `SUPABASE_SERVICE_ROLE_KEY` | yes (prod) | Bookings, availability |
+| `RESEND_API_KEY` | no | Confirmation emails |
 | `EMAIL_FROM` | no | From address |
-| `CRON_SECRET` | no | Protect reminder endpoint |
 | `NEXT_PUBLIC_SHOP_NAME` | no | Brand name |
 | `NEXT_PUBLIC_APP_URL` | no | Canonical URL |
 
@@ -87,7 +82,7 @@ npm run dev
 app/
   (public)/book|account
   (admin)/admin/...
-  api/availability|bookings|cron
+  api/availability|bookings
   auth/callback
 components/   ui, layout, admin
 lib/          supabase, booking slots, email, validators

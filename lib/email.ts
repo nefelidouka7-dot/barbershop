@@ -43,37 +43,3 @@ export async function sendBookingConfirmation(params: {
 
   return { skipped: false as const };
 }
-
-export async function sendBookingReminder(params: {
-  to: string;
-  customerName: string;
-  barberName: string;
-  serviceName: string;
-  start: Date;
-}) {
-  const resend = getResend();
-  if (!resend || !params.to) return { skipped: true as const };
-
-  const from = process.env.EMAIL_FROM || "Bookings <onboarding@resend.dev>";
-  const when = format(params.start, "EEEE d MMMM yyyy 'at' HH:mm");
-
-  await resend.emails.send({
-    from,
-    to: params.to,
-    subject: `Reminder: appointment tomorrow — ${shopName()}`,
-    html: `
-      <div style="font-family:Georgia,serif;color:#1a1a1a">
-        <h1 style="font-size:22px">${shopName()}</h1>
-        <p>Hi ${params.customerName},</p>
-        <p>Reminder for your appointment tomorrow:</p>
-        <ul>
-          <li><strong>Service:</strong> ${params.serviceName}</li>
-          <li><strong>Barber:</strong> ${params.barberName}</li>
-          <li><strong>When:</strong> ${when}</li>
-        </ul>
-      </div>
-    `,
-  });
-
-  return { skipped: false as const };
-}
