@@ -4,6 +4,8 @@
 
 @layer base {
   :root {
+    --font-display: "EB Garamond", "Times New Roman", serif;
+    --font-sans: "Manrope", system-ui, sans-serif;
     --background: 30 8% 7%;
     --foreground: 40 20% 92%;
     --card: 30 8% 10%;
