@@ -112,22 +112,23 @@ export default async function HomePage() {
     <div className="overflow-x-hidden">
       <SiteHeader />
 
-      <section className="relative min-h-[100svh] overflow-hidden">
+      <section className="relative h-[100svh] max-h-[920px] min-h-[640px] overflow-hidden lg:max-h-[860px] xl:max-h-[820px] 2xl:max-h-[780px]">
         <Image
           src="/banner.jpg"
           alt={t.heroAlt}
           fill
           priority
+          quality={90}
           sizes="100vw"
-          className="object-cover object-[center_35%] scale-[1.02] animate-ken-burns"
+          className="object-cover object-center md:object-[center_42%]"
         />
 
-        <div className="absolute inset-0 bg-gradient-to-r from-background/85 via-background/35 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent to-55%" />
-        <div className="absolute inset-x-0 top-0 h-44 bg-gradient-to-b from-background/40 via-background/10 to-transparent md:h-52" />
-        <div className="absolute inset-0 opacity-[0.08] mix-blend-overlay grain-overlay" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-background/30 to-transparent md:via-background/20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/45 to-transparent to-60%" />
+        <div className="absolute inset-x-0 top-0 h-36 bg-gradient-to-b from-background/35 via-background/10 to-transparent md:h-44" />
+        <div className="absolute inset-0 opacity-[0.06] mix-blend-overlay grain-overlay" />
 
-        <div className="relative z-10 mx-auto flex min-h-[100svh] max-w-6xl flex-col justify-end px-5 pb-20 pt-32 md:px-8 md:pb-28 lg:pb-32">
+        <div className="relative z-10 mx-auto flex h-full max-w-6xl flex-col justify-end px-5 pb-16 pt-28 md:px-8 md:pb-24 lg:pb-28">
           <div className="max-w-3xl md:pl-2">
             <div
               className="mb-7 h-px w-16 origin-left scale-x-0 bg-primary/90 animate-hero-line"
@@ -201,24 +202,26 @@ export default async function HomePage() {
               {t.craftBody}
             </p>
           </div>
-          <div className="relative aspect-[4/5] overflow-hidden animate-fade-up md:aspect-[3/4]">
+          <div className="relative aspect-[4/5] overflow-hidden animate-fade-up md:aspect-[4/5] lg:aspect-[5/6]">
             <Image
               src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=1200&q=80"
               alt={t.craftAlt}
               fill
-              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 40vw"
+              className="object-cover object-center"
             />
             <div className="absolute inset-0 bg-gradient-to-tr from-background/40 to-transparent" />
           </div>
         </div>
       </section>
 
-      <section className="relative h-[55vh] min-h-[320px] overflow-hidden md:h-[70vh]">
+      <section className="relative h-[42vh] min-h-[280px] overflow-hidden md:h-[48vh] md:min-h-[360px] lg:h-[420px] xl:h-[460px]">
         <Image
           src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?w=2000&q=85"
           alt={t.atmosphereAlt}
           fill
-          className="object-cover"
+          sizes="100vw"
+          className="object-cover object-center"
         />
         <div className="absolute inset-0 bg-background/55" />
         <div className="relative z-10 flex h-full items-end px-5 pb-12 md:px-8 md:pb-16">
@@ -284,13 +287,14 @@ export default async function HomePage() {
                 className="group animate-fade-up"
                 style={{ animationDelay: `${i * 90}ms` }}
               >
-                <div className="relative aspect-[4/5] overflow-hidden">
+                <div className="relative aspect-[4/5] overflow-hidden md:aspect-[5/6]">
                   {barber.photo_url && (
                     <Image
                       src={barber.photo_url}
                       alt={barber.name}
                       fill
-                      className="object-cover transition duration-700 group-hover:scale-[1.04]"
+                      sizes="(max-width: 768px) 100vw, 40vw"
+                      className="object-cover object-top transition duration-700 group-hover:scale-[1.03]"
                     />
                   )}
                   <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
@@ -364,12 +368,13 @@ export default async function HomePage() {
               </div>
             </dl>
           </div>
-          <div className="relative min-h-[360px] overflow-hidden md:min-h-full">
+          <div className="relative aspect-[4/5] overflow-hidden md:aspect-auto md:min-h-[480px] lg:min-h-[560px]">
             <Image
               src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=1200&q=80"
               alt={t.visitAlt}
               fill
-              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 40vw"
+              className="object-cover object-center"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background/70 to-transparent" />
           </div>
@@ -382,7 +387,8 @@ export default async function HomePage() {
             src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=1800&q=80"
             alt=""
             fill
-            className="object-cover opacity-30"
+            sizes="100vw"
+            className="object-cover object-center opacity-30"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/70" />
         </div>
