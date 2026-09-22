@@ -48,6 +48,24 @@ const el = {
     craftAlt: "Barber στη δουλειά",
     atmosphereAlt: "Εργαλεία και ατμόσφαιρα",
     atmosphereLine: "Ένας χώρος φτιαγμένος για το κούρεμα — ξύλο, ατσάλι και ζεστό φως.",
+    storyEyebrow: "Η επίσκεψη",
+    storyChapters: [
+      {
+        index: "01",
+        title: "Η κουβέντα",
+        body: "Πριν πιάσουμε ψαλίδι, μιλάμε. Τι δουλεύει στα μαλλιά σου, τι θες να αλλάξει, πόσο χρόνο έχεις για styling το πρωί.",
+      },
+      {
+        index: "02",
+        title: "Το κούρεμα",
+        body: "Ψαλίδι, μηχανή και ξυράφι — στον ρυθμό που χρειάζεται. Καθαρά fades, σωστές γραμμές, τίποτα βιαστικό.",
+      },
+      {
+        index: "03",
+        title: "Το φινίρισμα",
+        body: "Ζεστή πετσέτα, περιποίηση στα γένια και το τελικό πέρασμα. Φεύγεις έτοιμος, όχι απλώς κουρεμένος.",
+      },
+    ],
     menuEyebrow: "Μενού",
     servicesTitle: "Τι προσφέρουμε",
     servicesBody:
@@ -248,6 +266,24 @@ const en: Dictionary = {
     craftAlt: "Barber at work",
     atmosphereAlt: "Tools and atmosphere",
     atmosphereLine: "A room built for the cut — wood, steel, and warm light.",
+    storyEyebrow: "The visit",
+    storyChapters: [
+      {
+        index: "01",
+        title: "The conversation",
+        body: "Before any scissors, we talk. What works with your hair, what you want changed, how much time you have for styling in the morning.",
+      },
+      {
+        index: "02",
+        title: "The cut",
+        body: "Scissors, clippers, and steel — at the pace the work needs. Clean fades, honest lines, nothing rushed.",
+      },
+      {
+        index: "03",
+        title: "The finish",
+        body: "Hot towel, beard work, and the final pass. You leave ready, not just trimmed.",
+      },
+    ],
     menuEyebrow: "Menu",
     servicesTitle: "What we offer",
     servicesBody:

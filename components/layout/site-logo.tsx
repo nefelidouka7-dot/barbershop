@@ -43,7 +43,7 @@ export function SiteLogo({
     <Link
       href={href}
       className={cn(
-        "inline-flex shrink-0 transition opacity-95 hover:opacity-100",
+        "inline-flex shrink-0 opacity-95 transition-opacity duration-500 ease-soft hover:opacity-100",
         className
       )}
       aria-label={name}

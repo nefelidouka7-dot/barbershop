@@ -55,16 +55,24 @@ const config: Config = {
       },
       keyframes: {
         "fade-up": {
-          from: { opacity: "0", transform: "translateY(18px)" },
+          from: { opacity: "0", transform: "translateY(22px)" },
           to: { opacity: "1", transform: "translateY(0)" },
         },
         "fade-in": {
           from: { opacity: "0" },
           to: { opacity: "1" },
         },
-        "ken-burns": {
+        "ken-burns-soft": {
           from: { transform: "scale(1.02)" },
-          to: { transform: "scale(1.1)" },
+          to: { transform: "scale(1.06)" },
+        },
+        shimmer: {
+          from: { transform: "translateX(-140%)" },
+          to: { transform: "translateX(140%)" },
+        },
+        glow: {
+          "0%, 100%": { opacity: "0.35" },
+          "50%": { opacity: "0.7" },
         },
         "hero-line": {
           from: { transform: "scaleX(0)" },
@@ -94,9 +102,11 @@ const config: Config = {
       },
       animation: {
         "fade-up":
-          "fade-up 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards",
-        "fade-in": "fade-in 0.7s ease-out forwards",
-        "ken-burns": "ken-burns 28s ease-out forwards",
+          "fade-up 1.05s cubic-bezier(0.22, 1, 0.36, 1) forwards",
+        "fade-in": "fade-in 0.9s ease-out forwards",
+        "ken-burns-soft": "ken-burns-soft 42s ease-out forwards",
+        shimmer: "shimmer 1.1s cubic-bezier(0.22, 1, 0.36, 1)",
+        glow: "glow 4.5s ease-in-out infinite",
         "hero-line":
           "hero-line 1s cubic-bezier(0.22, 1, 0.36, 1) 0.35s forwards",
         "hero-rule":

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { RecoveryRedirect } from "@/components/auth/recovery-redirect";
 import { LocaleProvider } from "@/components/i18n/locale-provider";
+import { ScrollProgress } from "@/components/motion/scroll-progress";
 import { Toaster } from "@/components/ui/use-toast";
 import { getDictionary } from "@/lib/i18n/dictionaries";
 import { getLocale } from "@/lib/i18n/get-locale";
@@ -37,6 +38,7 @@ export default async function RootLayout({
       </head>
       <body className="font-sans">
         <LocaleProvider initialLocale={locale}>
+          <ScrollProgress />
           <RecoveryRedirect />
           {children}
         </LocaleProvider>
