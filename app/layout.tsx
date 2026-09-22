@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { RecoveryRedirect } from "@/components/auth/recovery-redirect";
 import { LocaleProvider } from "@/components/i18n/locale-provider";
 import { Toaster } from "@/components/ui/use-toast";
 import { getDictionary } from "@/lib/i18n/dictionaries";
@@ -35,7 +36,10 @@ export default async function RootLayout({
         />
       </head>
       <body className="font-sans">
-        <LocaleProvider initialLocale={locale}>{children}</LocaleProvider>
+        <LocaleProvider initialLocale={locale}>
+          <RecoveryRedirect />
+          {children}
+        </LocaleProvider>
         <Toaster />
       </body>
     </html>
